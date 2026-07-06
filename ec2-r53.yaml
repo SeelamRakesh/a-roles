@@ -1,0 +1,4 @@
+- name: Create EC2 instance and Route 53
+  hosts: all
+  connection: local
+  vars: 

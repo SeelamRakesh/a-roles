@@ -9,6 +9,13 @@
    instances:
    - mongodb
    - catalogue  
+   - user
+   - cart
+   - shipping
+   - payment
+   - redis
+   - mysql
+   - rabbitmq
   tasks:
   - name: EC2 creation
     amazon.aws.ec2_instance:

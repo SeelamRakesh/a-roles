@@ -16,6 +16,7 @@
    - redis
    - mysql
    - rabbitmq
+   - frontend
   tasks:
   - name: EC2 creation
     amazon.aws.ec2_instance:

@@ -6,21 +6,20 @@
    ami_id: ami-0220d79f3f480ecf5
    env: DEV
    instances:
-    - mongodb
-    - catalogue  
+   - mongodb
+   - catalogue  
   tasks:
   - name: EC2 creation
     amazon.aws.ec2_instance:
-      name: "{{ item }}-{{ dev }}" #mongodb-dev
+      name: "{{ item }}-{{ env }}" #mongodb-dev
       instance_type: "t3.micro"
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
       tags:
-        Name: "{{ item }}-{{ dev }}"
+        Name: "{{ item }}-{{ env }}"
         Project: Roboshop
-        Environment: "{{ DEV }}"
+        Environment: "{{ env }}"
         Component: "{{ item }}"
-      loop:
-       "{{ instances }}"
+      loop: "{{ instances }}"
     register: ec2_output
 

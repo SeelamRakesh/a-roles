@@ -1,0 +1,6 @@
+- name: "Configure {{ component }}"
+  hosts: "{{ component }}"
+  connection: local
+  become: yes
+  tasks: 
+  - 

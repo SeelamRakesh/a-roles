@@ -15,6 +15,6 @@
 
 - name: Restart User service
   ansible.builtin.service:
-    name: catalogue
+    name: "{{ component }}"
     state: restarted
     enabled: yes

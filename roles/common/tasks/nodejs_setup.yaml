@@ -1,5 +1,5 @@
 - name: Enable nodejs:20
-  ansible.builtin.command: dnf enable nodejs:20
+  ansible.builtin.command: dnf module enable nodejs:20 -y
 
 - name: Install nodejs
   ansible.builtin.dnf:

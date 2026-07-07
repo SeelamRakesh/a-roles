@@ -22,4 +22,4 @@
     configure_priv: ".*"
     write_priv: ".*"
     read_priv: ".*"
-  state: present
+    state: present

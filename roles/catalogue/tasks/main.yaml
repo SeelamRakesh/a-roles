@@ -18,11 +18,6 @@
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
 
-- name: copy mongo repo
-  ansible.builtin.copy:
-    src: mongo.repo
-    dest: /etc/yum.repos.d/mongo.repo
-
 - name: Install Mongodb client
   ansible.builtin.dnf:
    name: mongodb-mongosh
@@ -34,7 +29,7 @@
 
 - name: Load master data
   ansible.builtin.shell: mongosh --host {{ MONGODB_HOST }} </app/db/master-data.js
-  when: catalogue_output.std_out | int < 0
+  when: catalogue_output.stdout | int < 0
 
 - name: Restart catalogue service
   ansible.builtin.service:

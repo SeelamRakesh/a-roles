@@ -3,7 +3,7 @@
 
 - name: Install nodejs
   ansible.builtin.dnf:
-   package: nodejs 
+   name: nodejs 
    state: present
 
 - name: Install dependencies
